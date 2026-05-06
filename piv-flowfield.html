@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PIV flowfield, animated</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0b0a08;
+    color: #cfe28b;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    overflow: hidden;
+    height: 100%;
+  }
+  .stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .label {
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <canvas id="piv"></canvas>
+  <div class="label">PIV . flowfield . live</div>
+</div>
+
+<script>
+(() => {
+  const canvas = document.getElementById('piv');
+  const ctx = canvas.getContext('2d');
+
+  // Tunables
+  const PARTICLES = 1400;        // particle count
+  const SPEED = 1.6;             // global speed multiplier
+  const FADE = 0.06;             // trail fade per frame (lower = longer trails)
+  const SHOW_VECTORS = true;     // draw faint static vector field underneath
+  const VEC_SPACING = 36;        // px between drawn arrows
+  const PARTICLE_LIFE = 180;     // frames before reseed
+  const COLOR = [168, 224, 85];  // base green (rgb)
+
+  let W = 0, H = 0, DPR = 1;
+  let particles = [];
+
+  // Analytic flow field: two horizontal vortex cells, gentle downward bias.
+  // Matches the visual character of the source PIV (vortex-pair-like pattern).
+  function field(x, y) {
+    // x, y in [0, 1]
+    const TAU = Math.PI * 2;
+    const a = Math.sin(TAU * x) * Math.cos(Math.PI * y);
+    const b = -Math.cos(TAU * x) * Math.sin(Math.PI * y);
+    // Slight modulation so it does not feel perfectly periodic
+    const swirl = 0.25 * Math.sin(Math.PI * (x + y));
+    return {
+      u: a + swirl * 0.3,
+      v: b + 0.1 * Math.sin(TAU * x),
+    };
+  }
+
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = canvas.clientWidth;
+    H = canvas.clientHeight;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    // Solid fill on resize so first frames look right
+    ctx.fillStyle = '#0b0a08';
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function spawn(p) {
+    p.x = Math.random() * W;
+    p.y = Math.random() * H;
+    p.life = Math.random() * PARTICLE_LIFE;
+    p.maxLife = PARTICLE_LIFE * (0.6 + Math.random() * 0.8);
+  }
+
+  function init() {
+    particles = new Array(PARTICLES);
+    for (let i = 0; i < PARTICLES; i++) {
+      particles[i] = {};
+      spawn(particles[i]);
+    }
+  }
+
+  function drawVectors() {
+    if (!SHOW_VECTORS) return;
+    ctx.save();
+    ctx.strokeStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},0.10)`;
+    ctx.lineWidth = 1;
+    for (let y = VEC_SPACING / 2; y < H; y += VEC_SPACING) {
+      for (let x = VEC_SPACING / 2; x < W; x += VEC_SPACING) {
+        const f = field(x / W, y / H);
+        const len = VEC_SPACING * 0.45;
+        const m = Math.hypot(f.u, f.v) || 1;
+        const dx = (f.u / m) * len;
+        const dy = (f.v / m) * len;
+        ctx.beginPath();
+        ctx.moveTo(x - dx * 0.5, y - dy * 0.5);
+        ctx.lineTo(x + dx * 0.5, y + dy * 0.5);
+        ctx.stroke();
+        // arrowhead
+        const ah = 3;
+        const ang = Math.atan2(dy, dx);
+        ctx.beginPath();
+        ctx.moveTo(x + dx * 0.5, y + dy * 0.5);
+        ctx.lineTo(
+          x + dx * 0.5 - ah * Math.cos(ang - 0.4),
+          y + dy * 0.5 - ah * Math.sin(ang - 0.4)
+        );
+        ctx.moveTo(x + dx * 0.5, y + dy * 0.5);
+        ctx.lineTo(
+          x + dx * 0.5 - ah * Math.cos(ang + 0.4),
+          y + dy * 0.5 - ah * Math.sin(ang + 0.4)
+        );
+        ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  let vectorLayerStamped = false;
+
+  function frame() {
+    // Trail fade: redraw faint background over previous frame
+    ctx.fillStyle = `rgba(11,10,8,${FADE})`;
+    ctx.fillRect(0, 0, W, H);
+
+    // Repaint static vector layer occasionally so it does not get fully erased
+    if (!vectorLayerStamped || Math.random() < 0.02) {
+      drawVectors();
+      vectorLayerStamped = true;
+    }
+
+    // Advect particles
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      const f = field(p.x / W, p.y / H);
+      const nx = p.x + f.u * SPEED;
+      const ny = p.y + f.v * SPEED;
+
+      const a = Math.min(1, p.life / 20) * (1 - p.life / p.maxLife);
+      ctx.strokeStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},${0.55 * a})`;
+      ctx.lineWidth = 1.1;
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(nx, ny);
+      ctx.stroke();
+
+      p.x = nx;
+      p.y = ny;
+      p.life += 1;
+
+      if (
+        p.life > p.maxLife ||
+        p.x < -10 || p.x > W + 10 ||
+        p.y < -10 || p.y > H + 10
+      ) {
+        spawn(p);
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    vectorLayerStamped = false;
+  });
+  resize();
+  init();
+  frame();
+})();
+</script>
+</body>
+</html>

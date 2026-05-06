@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video Diagnostic</title>
+<style>
+  body { background: #111; color: #eee; font-family: monospace; padding: 20px; }
+  .test { border: 1px solid #444; padding: 10px; margin: 10px 0; }
+  video { width: 320px; height: 180px; background: #000; display: block; }
+  .ok { color: #6f6; }
+  .fail { color: #f66; }
+  h2 { margin: 4px 0; font-size: 14px; }
+</style>
+</head>
+<body>
+<h1>Video Diagnostic</h1>
+<p>Place this file at the root of your website folder (next to index.html), then double-click to open it. Each video below should play. The status line will say OK or FAIL with the reason.</p>
+
+<div id="results"></div>
+
+<script>
+var files = [
+  "DNA condensates.mp4",
+  "Microfluidic droplets.mp4",
+  "Crystallization of salts in droplets.mp4",
+  "crystallization-timelapse.mp4",
+  "Droplet flow.mp4",
+  "Vapor mediated interaction.mp4",
+  "Marangoni Flow.mp4",
+  "Bacterial motion.mp4",
+  "Piv-flowfield.mp4"
+];
+
+var results = document.getElementById('results');
+
+files.forEach(function (file) {
+  var box = document.createElement('div');
+  box.className = 'test';
+  var h = document.createElement('h2');
+  h.textContent = file;
+  box.appendChild(h);
+
+  var status = document.createElement('div');
+  status.textContent = 'Loading...';
+  box.appendChild(status);
+
+  var v = document.createElement('video');
+  v.src = 'assets/index/video/' + file;
+  v.muted = true;
+  v.controls = true;
+  v.playsInline = true;
+  v.addEventListener('loadeddata', function () {
+    status.textContent = 'OK: video loaded, ' + v.videoWidth + 'x' + v.videoHeight + ', ' + v.duration.toFixed(1) + 's';
+    status.className = 'ok';
+    v.play().catch(function (e) {
+      status.textContent += ' (play blocked: ' + e.message + ')';
+    });
+  });
+  v.addEventListener('error', function () {
+    var err = v.error;
+    var msg = 'unknown';
+    if (err) {
+      msg = 'code ' + err.code + ': ' + (err.message || '');
+    }
+    status.textContent = 'FAIL: ' + msg;
+    status.className = 'fail';
+  });
+
+  box.appendChild(v);
+  results.appendChild(box);
+});
+</script>
+</body>
+</html>

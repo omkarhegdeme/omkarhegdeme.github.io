@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phenomena — Omkar Hegde</title>
+  <meta name="description" content="A visual gallery of scientific phenomena: droplet mixing, PIV flow fields, crystallization, vapor interactions, and more.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="nav" role="navigation"><a href="index.html" class="nav__logo">Omkar <span>Hegde</span></a><ul class="nav__links"><li><a href="research.html">Research</a></li><li><a href="phenomena.html" class="active">Phenomena</a></li><li><a href="publications.html">Publications</a></li><li><a href="journey.html">Journey</a></li><li><a href="yoga.html">Yoga &amp; Philosophy</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Connect</a></li></ul><button class="nav__toggle" aria-label="Open menu">&#9776;</button></nav>
+  <div class="nav__mobile" role="dialog"><button class="nav__mobile-close">&times;</button><a href="index.html">Home</a><a href="research.html">Research</a><a href="phenomena.html">Phenomena</a><a href="publications.html">Publications</a><a href="journey.html">Journey</a><a href="yoga.html">Yoga</a><a href="blog.html">Blog</a><a href="contact.html">Connect</a></div>
+
+  <section class="page-header section" style="position:relative;overflow:hidden;">
+    <canvas class="flow-canvas" data-particles="60" data-speed="0.4" data-mode="streamline" data-color="0, 212, 170"></canvas>
+    <div class="container" style="position:relative;z-index:2;">
+      <span class="page-header__pre reveal">Experiments &amp; Phenomena</span>
+      <h1 class="page-header__title reveal">What I Observe</h1>
+      <p class="page-header__desc reveal">Each card below is a window into a physical process. Click to explore the science, watch the motion, and read the explanation.</p>
+    </div>
+  </section>
+
+  <section class="section--compact">
+    <div class="container">
+      <div class="filters reveal" data-target=".phenomenon-card">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="droplets">Droplets</button>
+        <button class="filter-btn" data-filter="flow">Flow</button>
+        <button class="filter-btn" data-filter="crystallization">Crystallization</button>
+        <button class="filter-btn" data-filter="bio">Biological</button>
+        <button class="filter-btn" data-filter="simulation">Simulation</button>
+        <button class="filter-btn" data-filter="devices">Devices</button>
+      </div>
+
+      <div class="phenomena-grid mt-lg">
+
+        <div class="phenomenon-card reveal video-hover" data-category="droplets" data-video-src="assets/video/droplet-mixing.mp4" data-lightbox="assets/video/droplet-mixing.mp4" data-caption="Internal mixing dynamics in an evaporating sessile droplet with colloidal tracer particles.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/droplet-mixing-thumb.jpg');">
+            <span class="video-badge">hover to play</span>
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Mixing in Evaporating Droplets</h3>
+            <p class="phenomenon-card__hook">A single drying drop becomes a miniature reactor.</p>
+            <p class="phenomenon-card__desc">Capillary flows and Marangoni stresses drive complex recirculation inside sessile droplets. Tracer particles reveal the flow architecture that determines where matter ends up when the solvent is gone.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal video-hover" data-category="flow" data-video-src="assets/video/piv-flowfield.mp4" data-lightbox="assets/video/piv-flowfield.mp4" data-caption="Micro-PIV velocity field showing internal circulation in a drying droplet.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/piv-flowfield-01.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Particle Trajectories &amp; Micro-PIV</h3>
+            <p class="phenomenon-card__hook">Mapping invisible flow with light and mathematics.</p>
+            <p class="phenomenon-card__desc">Particle image velocimetry resolves velocity fields at the microscale. Each vector is computed from the correlated motion of thousands of fluorescent tracers, revealing the fluid dynamics that govern transport and deposition.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal video-hover" data-category="crystallization" data-video-src="assets/video/crystallization-timelapse.mp4" data-lightbox="assets/video/crystallization-timelapse.mp4" data-caption="Time-lapse of salt crystallization advancing from the contact line of an evaporating droplet.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/crystallization-front.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Crystallization Fronts</h3>
+            <p class="phenomenon-card__hook">Order emerges at the boundary between liquid and solid.</p>
+            <p class="phenomenon-card__desc">As a saline droplet evaporates, supersaturation triggers nucleation near the contact line. The crystallization front advances inward, its morphology shaped by the competition between diffusion, flow, and confinement.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal video-hover" data-category="droplets" data-video-src="assets/video/vapor-interaction.mp4" data-lightbox="assets/video/vapor-interaction.mp4" data-caption="Two neighboring droplets interacting through shared vapor diffusion fields.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/vapor-interaction-01.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Vapor-Mediated Droplet Interaction</h3>
+            <p class="phenomenon-card__hook">Drops talk to each other through the air.</p>
+            <p class="phenomenon-card__desc">When sessile droplets sit close together, their vapor fields overlap. The resulting asymmetry in local evaporation rate drives differential flows and alters deposition, a form of long-range physical communication.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal video-hover" data-category="bio" data-video-src="assets/video/bacterial-droplet.mp4" data-lightbox="assets/video/bacterial-droplet.mp4" data-caption="Bacterial colony organization during sessile droplet drying.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/bacterial-droplet-01.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Bacterial Organization in Drying Droplets</h3>
+            <p class="phenomenon-card__hook">Life shapes deposition patterns.</p>
+            <p class="phenomenon-card__desc">When a droplet containing bacteria dries, the organisms are not merely passive particles. Their motility, interactions, and response to concentration gradients modify the flow and the final deposit structure.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal" data-category="bio" data-lightbox="assets/images/dna-condensate.jpg" data-caption="DNA nanostar liquid condensates under fluorescence microscopy.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/dna-condensate.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">DNA Liquid Condensation</h3>
+            <p class="phenomenon-card__hook">Programmable molecules that phase-separate on command.</p>
+            <p class="phenomenon-card__desc">DNA nanostars with designed valency undergo liquid-liquid phase separation, forming condensates whose properties, size, viscosity, and composition, can be tuned by sequence and temperature.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal video-hover" data-category="flow" data-video-src="assets/video/microfluidic-flow.mp4" data-lightbox="assets/video/microfluidic-flow.mp4" data-caption="Fluorescent dye flow in microfluidic channels.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/microfluidic-device-02.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Microfluidic Flow Patterns</h3>
+            <p class="phenomenon-card__hook">Laminar precision at the cellular scale.</p>
+            <p class="phenomenon-card__desc">Microfluidic channels confine fluids to dimensions where viscosity dominates inertia. The resulting laminar flow enables precise control of chemical gradients, mixing, and transport around cells.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal video-hover" data-category="simulation" data-video-src="assets/video/cfd-vortex.mp4" data-lightbox="assets/video/cfd-vortex.mp4" data-caption="CFD simulation of thermal convection with vortex shedding.">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/cfd-vortex-01.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">CFD Visual Fields</h3>
+            <p class="phenomenon-card__hook">Computation renders the invisible tangible.</p>
+            <p class="phenomenon-card__desc">Computational fluid dynamics solves the Navier-Stokes equations on discrete grids, producing velocity, pressure, and temperature fields that reveal the structure of flows too complex or too small to measure directly.</p>
+          </div>
+        </div>
+
+        <!-- Merged from former Media page -->
+        <div class="phenomenon-card reveal" data-category="droplets" data-lightbox="assets/images/droplet-evaporation-01.jpg" data-caption="Bright-field image of particle deposition in an evaporating sessile droplet">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/droplet-evaporation-01.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Evaporation Deposition Pattern</h3>
+            <p class="phenomenon-card__hook">A fossil record left behind when a droplet dries.</p>
+            <p class="phenomenon-card__desc">The final deposition pattern of an evaporating droplet records every flow, every gradient, and every nucleation event that occurred during its lifetime. Reading these patterns reveals the physics that produced them.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal" data-category="devices" data-lightbox="assets/images/microfluidic-device-01.png" data-caption="Microfluidic co-culture chip with 5x16 chamber grid">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/microfluidic-device-01.png');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Co-Culture Chip Architecture</h3>
+            <p class="phenomenon-card__hook">Eighty independently addressable chambers on a glass slide.</p>
+            <p class="phenomenon-card__desc">A microfluidic chip with 80 chambers arranged in a 5x16 grid, each with valve-controlled reagent delivery, designed for parallel cell co-culture experiments with real-time fluorescence readout.</p>
+          </div>
+        </div>
+
+        <div class="phenomenon-card reveal" data-category="devices" data-lightbox="assets/images/microfluidic-device-02.jpg" data-caption="Fluorescence imaging in microfluidic channels">
+          <div class="phenomenon-card__media" style="background-image:url('assets/images/microfluidic-device-02.jpg');">
+            <div class="phenomenon-card__play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          </div>
+          <div class="phenomenon-card__body">
+            <h3 class="phenomenon-card__title">Fluorescence in Channels</h3>
+            <p class="phenomenon-card__hook">Tracking flow with fluorescent dye.</p>
+            <p class="phenomenon-card__desc">Fluorescent tracer dye flowing through microfluidic channels, used to validate channel geometry, mixing dynamics, and the laminar profile of the imposed flow.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer__bottom"><span>&copy; 2025 Omkar Hegde</span><span><a href="index.html">Home</a></span></div></div></footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Media viewer"><button class="lightbox__close" aria-label="Close">&times;</button><div class="lightbox__content"></div><p class="lightbox__caption"></p></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

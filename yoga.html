@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga &amp; Philosophy — Omkar Hegde</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .yoga-hero {
+      padding: var(--space-4xl) 0;
+      background: linear-gradient(180deg, var(--void) 0%, #0c0c14 50%, var(--void) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .yoga-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,212,170,0.03) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .reflection-card {
+      background: rgba(28, 28, 36, 0.4);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-xl);
+      position: relative;
+    }
+    .reflection-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: var(--space-lg);
+      bottom: var(--space-lg);
+      width: 2px;
+      background: var(--accent);
+      opacity: 0.3;
+      border-radius: 1px;
+    }
+    .reflection-card p {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation"><a href="index.html" class="nav__logo">Omkar <span>Hegde</span></a><ul class="nav__links"><li><a href="research.html">Research</a></li><li><a href="phenomena.html">Phenomena</a></li><li><a href="publications.html">Publications</a></li><li><a href="journey.html">Journey</a></li><li><a href="yoga.html" class="active">Yoga &amp; Philosophy</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Connect</a></li></ul><button class="nav__toggle" aria-label="Open menu">&#9776;</button></nav>
+  <div class="nav__mobile" role="dialog"><button class="nav__mobile-close">&times;</button><a href="index.html">Home</a><a href="research.html">Research</a><a href="phenomena.html">Phenomena</a><a href="publications.html">Publications</a><a href="journey.html">Journey</a><a href="yoga.html">Yoga</a><a href="blog.html">Blog</a><a href="contact.html">Connect</a></div>
+
+  <div class="yoga-hero">
+    <div class="container container--narrow" style="text-align:center;">
+      <span class="page-header__pre reveal">Yoga &amp; Philosophy</span>
+      <h1 class="page-header__title reveal" style="font-style:italic;">Attention, Breath, Discipline</h1>
+      <p class="page-header__desc reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        A separate dimension of this site, but not a separate dimension of the person.
+        The same quality of attention that guides an experiment guides a practice.
+      </p>
+    </div>
+  </div>
+
+  <!-- Teaching Background -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h4>Teaching &amp; Training</h4>
+        <h2 class="mt-md">500 Hours of Practice and Study</h2>
+        <p class="large-text mt-lg">
+          I hold a 500-hour yoga teacher certification. My training covered asana, pranayama,
+          anatomy, philosophy, and the ethics of teaching. I have taught group and private sessions,
+          with an emphasis on alignment, breath awareness, and the cultivation of steady attention.
+        </p>
+        <p class="mt-lg" style="color:var(--text-muted);">
+          My approach to teaching is rooted in precision and patience. A pose is not a shape to be
+          achieved. It is a question to be explored. What is tight. What is strong. What can be
+          released. The body, like an experiment, reveals itself to those who pay attention.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflections -->
+  <section class="section--compact" style="background:var(--surface);">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h4>Reflections</h4>
+        <h2 class="mt-md" style="font-style:italic;">On Observation and Practice</h2>
+      </div>
+      <div style="margin-top:var(--space-xl);display:flex;flex-direction:column;gap:var(--space-lg);">
+        <div class="reflection-card reveal">
+          <p>The microscope and the meditation cushion ask the same thing of you: sit still, look closely, and resist the impulse to narrate what you see before you have actually seen it.</p>
+        </div>
+        <div class="reflection-card reveal">
+          <p>Breath is the only autonomic function you can also choose to control. This makes it a bridge between the involuntary and the willed, between the body's own rhythm and the mind's intention. Pranayama is the practice of standing on that bridge.</p>
+        </div>
+        <div class="reflection-card reveal">
+          <p>Discipline is not rigidity. In yoga, as in experiment, the most productive state is a kind of relaxed precision: enough structure to hold the inquiry, enough freedom to notice what is unexpected.</p>
+        </div>
+        <div class="reflection-card reveal">
+          <p>Philosophy is not an ornament added to science. It is the substrate on which scientific questions grow. What counts as an explanation. What counts as evidence. How to hold uncertainty without collapsing it into false certainty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Connection -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h4>The Connection</h4>
+        <h2 class="mt-md">Between Lab and Practice</h2>
+        <p class="large-text mt-lg">
+          I do not claim that yoga makes me a better scientist, or that science validates yoga. The
+          connection is subtler and more honest than that. Both require sustained attention. Both
+          reward patience. Both involve sitting with systems you cannot fully control and learning
+          to read their signals. The quality of observation I bring to a microscope is the same
+          quality I bring to a breath. That is the connection, and it is enough.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading & Influences -->
+  <section class="section--compact" style="background:var(--surface);">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h4>Reading &amp; Influences</h4>
+        <p class="mt-md" style="color:var(--text-secondary);line-height:1.8;">
+          The Yoga Sutras of Patanjali. The Upanishads. B.K.S. Iyengar's Light on Yoga and Light
+          on Pranayama. T.K.V. Desikachar's Heart of Yoga. Thich Nhat Hanh on mindfulness.
+          Krishnamurti on observation without judgment. Simone Weil on attention as the rarest
+          form of generosity. Richard Feynman on the pleasure of finding things out. The overlap
+          is real.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer__bottom"><span>&copy; 2025 Omkar Hegde</span><span><a href="index.html">Home</a></span></div></div></footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

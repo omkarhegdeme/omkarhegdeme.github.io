@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Omkar Hegde</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="nav" role="navigation"><a href="index.html" class="nav__logo">Omkar <span>Hegde</span></a><ul class="nav__links"><li><a href="research.html">Research</a></li><li><a href="phenomena.html">Phenomena</a></li><li><a href="publications.html">Publications</a></li><li><a href="journey.html">Journey</a></li><li><a href="yoga.html">Yoga &amp; Philosophy</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="contact.html">Connect</a></li></ul><button class="nav__toggle" aria-label="Open menu">&#9776;</button></nav>
+  <div class="nav__mobile" role="dialog"><button class="nav__mobile-close">&times;</button><a href="index.html">Home</a><a href="research.html">Research</a><a href="phenomena.html">Phenomena</a><a href="publications.html">Publications</a><a href="journey.html">Journey</a><a href="yoga.html">Yoga</a><a href="blog.html">Blog</a><a href="contact.html">Connect</a></div>
+
+  <section class="page-header section">
+    <div class="container">
+      <span class="page-header__pre reveal">Blog</span>
+      <h1 class="page-header__title reveal">Writing &amp; Notes</h1>
+      <p class="page-header__desc reveal">Research notes, science essays, curiosity, philosophy, and updates.</p>
+    </div>
+  </section>
+
+  <section class="section--compact">
+    <div class="container">
+
+      <!-- Search -->
+      <div class="reveal" style="margin-bottom:var(--space-xl);">
+        <input type="text" id="blog-search" placeholder="Search posts..." style="
+          width:100%;max-width:400px;
+          background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);
+          padding:var(--space-md) var(--space-lg);
+          color:var(--text);font-family:var(--font-body);font-size:0.9rem;
+          outline:none;transition:border-color var(--transition);
+        " onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+      </div>
+
+      <!-- Filters -->
+      <div class="filters reveal" data-target=".blog-card">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="research">Research Notes</button>
+        <button class="filter-btn" data-filter="essay">Science Essays</button>
+        <button class="filter-btn" data-filter="curiosity">Curiosity</button>
+        <button class="filter-btn" data-filter="philosophy">Philosophy &amp; Yoga</button>
+      </div>
+
+      <!-- Posts -->
+      <div class="grid-2 mt-lg">
+
+        <div class="blog-card reveal" data-category="research">
+          <span class="blog-card__cat">Research Notes</span>
+          <h3 class="blog-card__title">On the Asymmetry of Vapor Fields Between Sessile Droplets</h3>
+          <p class="blog-card__excerpt">A short note on how I first noticed the asymmetric deposition pattern in neighboring droplets, and what it took to convince myself it was real and not an artifact of substrate preparation.</p>
+          <span class="blog-card__date">March 2025</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="essay">
+          <span class="blog-card__cat">Science Essay</span>
+          <h3 class="blog-card__title">Why Evaporation is Underrated</h3>
+          <p class="blog-card__excerpt">Evaporation is the most common phase transition we encounter daily. It drives weather, dries paint, deposits patterns, and concentrates solutes. Yet it is often treated as a trivial boundary condition.</p>
+          <span class="blog-card__date">February 2025</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="curiosity">
+          <span class="blog-card__cat">Curiosity</span>
+          <h3 class="blog-card__title">The Aesthetics of Scientific Data</h3>
+          <p class="blog-card__excerpt">Beautiful data is not the same as correct data. But there is a correlation. What does it mean when the flow field looks right before you run the statistics?</p>
+          <span class="blog-card__date">January 2025</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="philosophy">
+          <span class="blog-card__cat">Philosophy &amp; Yoga</span>
+          <h3 class="blog-card__title">Attention as Method</h3>
+          <p class="blog-card__excerpt">Simone Weil wrote that attention is the rarest form of generosity. In both yoga and in science, the quality of what you observe depends on the quality of the attention you bring.</p>
+          <span class="blog-card__date">December 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="research">
+          <span class="blog-card__cat">Research Notes</span>
+          <h3 class="blog-card__title">Building a Microfluidic Co-Culture System from Scratch</h3>
+          <p class="blog-card__excerpt">A technical journal of the process of designing, fabricating, and debugging a 5x16 co-culture chip with valve-based reagent delivery. What worked, what broke, and what I learned.</p>
+          <span class="blog-card__date">November 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="essay">
+          <span class="blog-card__cat">Science Essay</span>
+          <h3 class="blog-card__title">Phase Separation is Everywhere</h3>
+          <p class="blog-card__excerpt">From oil in vinaigrette to membraneless organelles in cells, the physics of liquid-liquid phase separation underlies more of the world than most scientists realize.</p>
+          <span class="blog-card__date">October 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="curiosity">
+          <span class="blog-card__cat">Curiosity</span>
+          <h3 class="blog-card__title">What CFD Taught Me About Thinking</h3>
+          <p class="blog-card__excerpt">Computational fluid dynamics forces you to discretize continuous problems. The process of choosing a mesh, a time step, and a convergence criterion is a lesson in the limits of precision.</p>
+          <span class="blog-card__date">September 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="philosophy">
+          <span class="blog-card__cat">Philosophy &amp; Yoga</span>
+          <h3 class="blog-card__title">Breath and Measurement</h3>
+          <p class="blog-card__excerpt">In pranayama, you measure the breath by counting. In the lab, you measure flow by tracking particles. Both require stillness, patience, and the willingness to count without losing count.</p>
+          <span class="blog-card__date">August 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="curiosity">
+          <span class="blog-card__cat">Curiosity</span>
+          <h3 class="blog-card__title">Why the Coffee Ring Persists</h3>
+          <p class="blog-card__excerpt">The coffee ring is the most familiar example of evaporation-driven self-assembly. But the conditions under which it breaks down are more interesting than the conditions under which it holds. What controls the transition from ring to uniform to central deposit?</p>
+          <span class="blog-card__date">July 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="curiosity">
+          <span class="blog-card__cat">Curiosity</span>
+          <h3 class="blog-card__title">A Universal Language for How Matter Organizes</h3>
+          <p class="blog-card__excerpt">Colloidal crystals, DNA condensates, bacterial colonies, and polymer blends all form structured phases from disordered precursors. The mechanisms differ. But the patterns rhyme. Is there a deeper framework connecting these phenomena?</p>
+          <span class="blog-card__date">June 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="curiosity">
+          <span class="blog-card__cat">Curiosity</span>
+          <h3 class="blog-card__title">When We Stop Measuring Averages</h3>
+          <p class="blog-card__excerpt">Ensemble measurements mask variability. Single-cell, single-droplet, and single-particle experiments reveal distributions, fluctuations, and rare events that are invisible to bulk measurement. What biology hides in its variance.</p>
+          <span class="blog-card__date">May 2024</span>
+        </div>
+
+        <div class="blog-card reveal" data-category="curiosity">
+          <span class="blog-card__cat">Curiosity</span>
+          <h3 class="blog-card__title">Patterns I Find Beautiful</h3>
+          <p class="blog-card__excerpt">Dendritic crystal growth. Viscous fingers in a Hele-Shaw cell. The ring deposit left by a drying coffee drop. Vortex streets behind cylinders. The fractal edge of a turbulent jet. Spinodal decomposition frozen mid-process. The hexagonal cells of Benard convection. The interference fringes on a soap film just before it ruptures.</p>
+          <span class="blog-card__date">April 2024</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer__bottom"><span>&copy; 2025 Omkar Hegde</span><span><a href="index.html">Home</a></span></div></div></footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

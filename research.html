@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Omkar Hegde</title>
+  <meta name="description" content="Research themes spanning droplet physics, microfluidics, biological phase transitions, self-assembly, and AI-driven experimental science.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo">Omkar <span>Hegde</span></a>
+    <ul class="nav__links">
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="phenomena.html">Phenomena</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      
+      <li><a href="yoga.html">Yoga &amp; Philosophy</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      
+      <li><a href="contact.html">Connect</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Open menu">&#9776;</button>
+  </nav>
+  <div class="nav__mobile" role="dialog"><button class="nav__mobile-close">&times;</button><a href="index.html">Home</a><a href="research.html">Research</a><a href="phenomena.html">Phenomena</a><a href="publications.html">Publications</a><a href="journey.html">Journey</a><a href="yoga.html">Yoga</a><a href="blog.html">Blog</a><a href="contact.html">Connect</a></div>
+
+  <section class="page-header section" style="position:relative;overflow:hidden;">
+    <canvas class="flow-canvas" data-particles="50" data-speed="0.3" data-mode="streamline" data-color="0, 212, 170"></canvas>
+    <div class="container" style="position:relative;z-index:2;">
+      <span class="page-header__pre reveal">Research</span>
+      <h1 class="page-header__title reveal">Themes &amp; Questions</h1>
+      <p class="page-header__desc reveal">My research is organized around phenomena, not chronology. Each theme represents a sustained line of inquiry into how matter organizes, flows, transitions, and responds at small scales.</p>
+    </div>
+  </section>
+
+  <!-- Research Themes -->
+  <section class="section--compact">
+    <div class="container">
+
+      <!-- Theme 1: Droplet Physics -->
+      <article class="reveal" style="margin-bottom:var(--space-4xl);" id="droplets">
+        <span class="label">Theme 01</span>
+        <h2 class="mt-md">Droplet Physics</h2>
+        <p style="color:var(--accent);font-size:0.95rem;margin-top:var(--space-xs);font-style:italic;">How tiny volumes organize matter as they vanish.</p>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-lg">
+          <div>
+            <p class="large-text">When a droplet evaporates on a surface, it drives internal flows, concentrates solutes, and deposits structures. These apparently simple systems encode rich physics: capillary flows, Marangoni stresses, contact line dynamics, and vapor-mediated coupling between neighboring drops.</p>
+            <p class="mt-lg" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Key questions:</strong> What sets the deposition pattern? How does substrate geometry influence the flow field? Can we design evaporation protocols that direct self-assembly?
+            </p>
+            <p class="mt-md" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Methods:</strong> Optical microscopy, micro-PIV, interferometry, confocal imaging, controlled atmosphere chambers.
+            </p>
+          </div>
+          <div class="media-item" style="background-image:url('assets/images/droplet-evaporation-01.jpg');aspect-ratio:16/10;" data-lightbox="assets/images/droplet-evaporation-01.jpg" data-caption="Internal flow field in an evaporating sessile droplet">
+            <div class="media-item__overlay"><span class="media-item__caption">Flow field in evaporating droplet</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Theme 2: Active Matter -->
+      <article class="reveal" style="margin-bottom:var(--space-4xl);" id="active-matter">
+        <span class="label">Theme 02</span>
+        <h2 class="mt-md">Active Matter, Biology and Beyond</h2>
+        <p style="color:var(--accent);font-size:0.95rem;margin-top:var(--space-xs);font-style:italic;">Energy-consuming systems that move, mix, and order themselves.</p>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-lg">
+          <div>
+            <p class="large-text">Active matter describes systems whose constituents consume energy to move living or non living entities, exerting forces on their surroundings. 
+              Bacteria, self-propelled colloids, driven suspensions, and synthetic analogs of living matter exhibit collective motion, flocking, and pattern formation that 
+              lie outside equilibrium thermodynamics.</p>
+            <p class="mt-lg" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Key questions:</strong> What sets the transition from disordered to collective motion? How do boundaries and confinement shape active flows? Can active stress be harnessed for transport and assembly?
+            </p>
+            <p class="mt-md" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Methods:</strong> Particle tracking, optical microscopy, continuum modeling, dimensional analysis.
+            </p>
+          </div>
+          <div class="media-item" style="background:var(--card);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;">
+            <span style="color:var(--text-muted);font-size:0.85rem;">[Active matter visualization placeholder]</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Theme 3: Microfluidics -->
+      <article class="reveal" style="margin-bottom:var(--space-4xl);" id="microfluidics">
+        <span class="label">Theme 03</span>
+        <h2 class="mt-md">Microfluidics, Design &amp; Applications</h2>
+        <p style="color:var(--accent);font-size:0.95rem;margin-top:var(--space-xs);font-style:italic;">Chips that route fluids, cells, and signals on demand.</p>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-lg">
+          <div>
+            <p class="large-text">Microfluidic devices enable precise control of fluid environments at scales relevant to cells and molecules. I design and build chip-scale platforms for co-culture experiments, reagent delivery, and real-time biological observation, integrating automation, solenoid valve control, and motorized stages.</p>
+            <p class="mt-lg" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Key questions:</strong> How can chip topology be optimized for temporal cytokine profiling? What scaling laws govern transport in porous-walled channels? How do we close the loop between sensing and actuation on chip?
+            </p>
+            <p class="mt-md" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Methods:</strong> Soft lithography, valve manifold design, Python-based control systems, fluorescence and brightfield microscopy.
+            </p>
+          </div>
+          <div class="media-item" style="background-image:url('assets/images/microfluidic-device-01.png');aspect-ratio:16/10;" data-lightbox="assets/images/microfluidic-device-01.png" data-caption="Microfluidic co-culture chip">
+            <div class="media-item__overlay"><span class="media-item__caption">Microfluidic co-culture chip</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Theme 4: Self-Assembly -->
+      <article class="reveal" style="margin-bottom:var(--space-4xl);" id="self-assembly">
+        <span class="label">Theme 04</span>
+        <h2 class="mt-md">Self-Assembly</h2>
+        <p style="color:var(--accent);font-size:0.95rem;margin-top:var(--space-xs);font-style:italic;">Order that emerges without a hand to place it.</p>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-lg">
+          <div>
+            <p class="large-text">Liquid-liquid phase separation, colloidal assembly, and DNA nanostructure formation are all examples of order emerging from local rules. I work with synthetic DNA nanostars that form liquid condensates with tunable properties, providing a programmable window into the thermodynamics and kinetics of phase transitions in soft matter and biology.</p>
+            <p class="mt-lg" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Key questions:</strong> What governs the phase boundaries of DNA liquids? How does valency control material properties? Can synthetic condensates serve as model systems for intracellular organization?
+            </p>
+            <p class="mt-md" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Methods:</strong> Fluorescence microscopy, FRAP, rheometry, statistical mechanics modeling.
+            </p>
+          </div>
+          <div class="media-item" style="background-image:url('assets/images/dna-condensate.jpg');aspect-ratio:16/10;" data-lightbox="assets/images/dna-condensate.jpg" data-caption="DNA nanostar liquid condensates under fluorescence microscopy">
+            <div class="media-item__overlay"><span class="media-item__caption">DNA liquid condensates</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Theme 5: CFD -->
+      <article class="reveal" style="margin-bottom:var(--space-4xl);" id="cfd">
+        <span class="label">Theme 05</span>
+        <h2 class="mt-md">Computational Fluid Dynamics</h2>
+        <p style="color:var(--accent);font-size:0.95rem;margin-top:var(--space-xs);font-style:italic;">Solving the flow before building the device.</p>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-lg">
+          <div>
+            <p class="large-text">My training in mechanical engineering grounds all of my work in heat transfer, fluid mechanics, and computational simulation. Pore-resolved CFD, Brinkman-Forchheimer transport models, and dimensional analysis are design tools, not just analysis tools, for microfluidic and porous systems.</p>
+            <p class="mt-lg" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Key questions:</strong> What permeability and tortuosity emerge from a given pore geometry? How does flow partition between lumen and wall in porous tubes? What residence time distributions does a chip topology produce?
+            </p>
+            <p class="mt-md" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Methods:</strong> OpenFOAM, custom finite-volume solvers, snappyHexMesh, microCT-based geometry reconstruction.
+            </p>
+          </div>
+          <div class="media-item" style="background-image:url('assets/images/cfd-vortex-01.jpg');aspect-ratio:16/10;" data-lightbox="assets/images/cfd-vortex-01.jpg" data-caption="CFD thermal convection simulation">
+            <div class="media-item__overlay"><span class="media-item__caption">CFD simulation</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Theme 6: AI -->
+      <article class="reveal" id="ai">
+        <span class="label">Theme 06</span>
+        <h2 class="mt-md">Synergizing AI with the Above</h2>
+        <p style="color:var(--accent);font-size:0.95rem;margin-top:var(--space-xs);font-style:italic;">Letting computation see what the eye misses.</p>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-lg">
+          <div>
+            <p class="large-text">Modern experiments generate vast, complex datasets. Computer vision, machine learning, and automated analysis cut across droplet physics, active matter, microfluidics, self-assembly, and CFD, extracting structure that is difficult to see by eye and closing the loop between hypothesis, experiment, and inference.</p>
+            <p class="mt-lg" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Applications:</strong> Particle tracking in active suspensions, deposition pattern classification in droplets, automated cell detection on chip, segmentation of microCT scans, surrogate models for CFD.
+            </p>
+            <p class="mt-md" style="color:var(--text-muted);font-size:0.9rem;">
+              <strong style="color:var(--text-secondary);">Methods:</strong> CLIP, EasyOCR, U-Net segmentation, classical computer vision, scientific Python stack.
+            </p>
+          </div>
+          <div class="media-item" style="background:var(--card);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;">
+            <span style="color:var(--text-muted);font-size:0.85rem;">[AI analysis visualization placeholder]</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>&copy; 2025 Omkar Hegde</span>
+        <span><a href="index.html">Home</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Media viewer">
+    <button class="lightbox__close" aria-label="Close">&times;</button>
+    <div class="lightbox__content"></div>
+    <p class="lightbox__caption"></p>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
